@@ -1,0 +1,7 @@
+parameters:
+#    regne_hostil_club.example.class: RegneHostil\ClubBundle\Example
+
+services:
+#    regne_hostil_club.example:
+#        class: %regne_hostil_club.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]
