@@ -29,9 +29,9 @@ class Noticia
     private $title;
 
     /**
-     * @var string
+     * @var datetime
      *
-     * @ORM\Column(name="date", type="string", length=20)
+     * @ORM\Column(name="date", type="date")
      */
     private $date;
 
@@ -42,6 +42,12 @@ class Noticia
      */
     private $text;
 
+    /**
+    * @var string
+    *
+    * @ORM\Column(name="lang", type="string", length=5)
+    */
+    private $lang; 
 
     /**
      * Get id
@@ -77,29 +83,6 @@ class Noticia
     }
 
     /**
-     * Set date
-     *
-     * @param string $date
-     * @return Noticia
-     */
-    public function setDate($date)
-    {
-        $this->date = $date;
-    
-        return $this;
-    }
-
-    /**
-     * Get date
-     *
-     * @return string 
-     */
-    public function getDate()
-    {
-        return $this->date;
-    }
-
-    /**
      * Set text
      *
      * @param string $text
@@ -120,5 +103,51 @@ class Noticia
     public function getText()
     {
         return $this->text;
+    }
+
+    /**
+     * Set lang
+     *
+     * @param string $lang
+     * @return Noticia
+     */
+    public function setLang($lang)
+    {
+        $this->lang = $lang;
+    
+        return $this;
+    }
+
+    /**
+     * Get lang
+     *
+     * @return string 
+     */
+    public function getLang()
+    {
+        return $this->lang;
+    }
+
+    /**
+     * Set date
+     *
+     * @param \DateTime $date
+     * @return Noticia
+     */
+    public function setDate($date)
+    {
+        $this->date = $date;
+    
+        return $this;
+    }
+
+    /**
+     * Get date
+     *
+     * @return \DateTime 
+     */
+    public function getDate()
+    {
+        return $this->date;
     }
 }

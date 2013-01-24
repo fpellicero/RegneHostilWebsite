@@ -14,7 +14,7 @@
 			<tr>
 				<td>{{ noticia.id }}</td>
 				<td>{{ noticia.title }}</td>
-				<td>{{ noticia.date }}</td>
+				<td>{{ noticia.date|date("d/m/Y") }}</td>
 				<td><a href="{{ path('regne_hostil_club_admin_edit_noticia', {'id' : noticia.id }) }}">Edit</td>
 				<td><a href="{{ path('regne_hostil_club_admin_delete_noticia', {'id' : noticia.id }) }}">Delete</td>
 			</tr>

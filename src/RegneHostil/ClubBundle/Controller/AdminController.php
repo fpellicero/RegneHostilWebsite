@@ -24,7 +24,8 @@ class AdminController extends Controller
 
 		$form = $this->createFormBuilder($noticia)
 			->add('title','text')
-			->add('date','text')
+			->add('lang','text')
+			->add('date','date')
 			->add('text','textarea')
 			->getForm();
 
@@ -74,7 +75,7 @@ class AdminController extends Controller
 
 		$form = $this->createFormBuilder($noticia)
 			->add('title','text')
-			->add('date','text')
+			->add('date','date')
 			->add('text','textarea')
 			->getForm();
 		
