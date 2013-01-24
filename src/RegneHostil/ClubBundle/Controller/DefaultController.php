@@ -28,8 +28,11 @@ class DefaultController extends Controller
 		$repository = $this->getDoctrine()
 			->getRepository('RegneHostilClubBundle:Noticia');
 		$query = $repository->createQueryBuilder('n')
+			->where('n.lang = :lang')
+			->setParameter('lang', 'cat')
 			->setFirstResult( $offset )
 			->setMaxResults ( 5 )
+			->orderBy('n.date', 'DESC')
 			->getQuery();
 
 		// Fetch the objects

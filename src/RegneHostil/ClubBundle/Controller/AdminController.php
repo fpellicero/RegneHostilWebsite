@@ -37,13 +37,7 @@ class AdminController extends Controller
 				$em->persist($noticia);
 				$em->flush();
 
-				return $this->render(
-					'RegneHostilClubBundle:Admin:create.html.twig',
-					array(
-						'form' => $form->createView(),
-						'created' => true
-					)
-				);
+				return new RedirectResponse($this->generateUrl('regne_hostil_club_admin_noticies')); 
 			}
 		}
 		return $this->render(

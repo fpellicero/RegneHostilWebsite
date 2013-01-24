@@ -13,6 +13,7 @@
 		{% for noticia in noticies %}
 			<tr>
 				<td>{{ noticia.id }}</td>
+				<td>{{ noticia.lang }}</td>
 				<td>{{ noticia.title }}</td>
 				<td>{{ noticia.date|date("d/m/Y") }}</td>
 				<td><a href="{{ path('regne_hostil_club_admin_edit_noticia', {'id' : noticia.id }) }}">Edit</td>

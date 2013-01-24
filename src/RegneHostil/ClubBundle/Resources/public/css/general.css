@@ -101,6 +101,7 @@ textarea {
 /* Style de les entrades (noticies) */
 .entry {
 	position: relative;
+	top: -30px;
 	color: white;
 	text-align: justify;
 }
