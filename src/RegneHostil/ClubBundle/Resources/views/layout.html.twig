@@ -1,0 +1,118 @@
+	<head>
+		<title>Regne Hostil</title>
+		
+		<!-- Fonts -->
+		<link href='http://fonts.googleapis.com/css?family=Calligraffitti' rel='stylesheet' type='text/css'>
+
+		<!-- JQuery -->
+		<script src=//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js></script>
+		
+		<!-- Twitter Bootstrap -->
+		<link rel=stylesheet href="{{ asset('bundles/regnehostilclub/css/bootstrap.css') }}">
+		<script type="text/javascript" src="{{ asset('bundles/regnehostilclub/js/bootstrap.js') }}"></script>
+		
+		<!-- Activem responsive bootstrap -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="{{ asset('bundles/regnehostilclub/css/bootstrap-responsive.css')}}" rel="stylesheet">
+		
+		<!-- Estils propis -->
+		<link rel=stylesheet href="{{ asset('bundles/regnehostilclub/css/general.css') }}">
+		<link rel=stylesheet href="{{ asset('bundles/regnehostilclub/css/main.css') }}">
+		
+		<!-- Lightbox per la galeria -->
+		<link rel="stylesheet" type="text/css" href="{{ asset('bundles/regnehostilclub/css/shadowbox.css') }}">
+		<script type="text/javascript" src="{{ asset('bundles/regnehostilclub/js/shadowbox.js') }}"></script>
+		<script type="text/javascript">
+			Shadowbox.init();
+		</script>
+	</head>
+
+	<body>
+		<div class="container-fluid">
+			<div class="row-fluid">
+				<!-- Left Navigation bar -->
+				<div class="span3 visible-desktop">
+					<div class="left-bar">
+						<center>
+                                <img src="{{ asset('bundles/regnehostilclub/img/logo-navbar.png') }}">
+                                <h2>Idioma</h2>
+                                <a href="#">
+                                        <img src="{{ asset('bundles/regnehostilclub/img/icon_cat.jpg') }}">
+                                </a>
+                                <a href="#">
+                                        <img src="{{ asset('bundles/regnehostilclub/img/icon_es.jpg') }}">
+                                </a>
+                                <h2>El Club</h2>
+                                <ul>
+                                    <li>
+										<a href="{{ path('regne_hostil_club_homepage') }}">Portada</a>
+                                    </li>
+                                    <li>
+										<a href="{{ path('regne_hostil_club_about_us') }}">Qui som?</a>
+                                    </li>
+                                    <li>
+                                        <a href="{{ path('regne_hostil_club_contact') }}">Contacta</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Kingdoms</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Forum</a>
+                                    </li>
+                                </ul>
+
+                                <h2>Multimèdia</h2>
+                                <a href="#">Galeria</a>
+
+                                <h2>Pròximes activitats</h2>
+
+						</center>
+					</div>
+				</div>
+
+                <!-- Desktop content -->
+                <div class="span6 visible-desktop">
+                        <a href="{{ path('regne_hostil_club_homepage') }}">
+                            <img src="{{ asset('bundles/regnehostilclub/img/site_logo.png') }}">
+                        </a>
+			{% block content %}{% endblock %}
+                </div>
+
+                <!-- Right Navbar -->
+                <div class="span3 visible-desktop">
+                    <div class="right-bar">
+                        <center>
+                            <img src="{{ asset('bundles/regnehostilclub/img/logo-navbar.png') }}">
+                            <h2>Quote</h2>
+                            <div class="quote">
+                                Whatever...
+                            </div>
+
+                            <h2>iQuote</h2>
+                            Coming soon...
+
+                            <h2>Links</h2>
+                            <ul>
+                                <li>
+                                <a href=http://www.lahermandaddelacero.com/>
+                                    La Hermandad del Acero
+                                </a>
+                                </li>
+                                <li>
+                                <a href=http://www.leyendasmedievales.com/>
+                                    Leyendas Medievales
+                                </a>
+                                </li>
+                                <li>
+                                <a href=http://www.chaos-age.com/>
+                                    La Era del Caos
+                                </a>
+                                </li>
+                            </ul>
+                        </center>
+                    </div>
+                </div>
+
+		</div>
+	</body>
+

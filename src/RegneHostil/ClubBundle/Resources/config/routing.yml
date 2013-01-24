@@ -1,3 +1,15 @@
 regne_hostil_club_homepage:
-    pattern:  /hello/{name}
+    pattern:  /
     defaults: { _controller: RegneHostilClubBundle:Default:index }
+
+regne_hostil_club_create_noticia:
+    pattern: /create
+    defaults: { _controller: RegneHostilClubBundle:Default:create }
+
+regne_hostil_club_about_us:
+    pattern: /about
+    defaults: { _controller: RegneHostilClubBundle:Default:about }
+
+regne_hostil_club_contact:
+    pattern: /contact
+    defaults: { _controller: RegneHostilClubBundle:Default:contact }

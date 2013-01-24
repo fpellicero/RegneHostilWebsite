@@ -1,0 +1,9 @@
+{% extends 'RegneHostilClubBundle::layout.html.twig' %}
+
+{% block content %}
+<form action="{{ path('regne_hostil_club_create_noticia') }}" method="post" {{ form_enctype(form) }}>
+    {{ form_widget(form) }}
+
+    <input type="submit" />
+</form>
+{% endblock %}
