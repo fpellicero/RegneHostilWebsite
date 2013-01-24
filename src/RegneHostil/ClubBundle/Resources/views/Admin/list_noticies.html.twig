@@ -1,0 +1,24 @@
+{% extends 'RegneHostilClubBundle:Admin:layout.html.twig' %}
+
+{% block content %}
+	<table class='table table-hover table-striped'>
+		<thead>
+			<tr>
+				<th>Id</th>
+				<th>Titol</th>
+				<th>Data</th>
+			</tr>
+		</thead>
+		<tbody>
+		{% for noticia in noticies %}
+			<tr>
+				<td>{{ noticia.id }}</td>
+				<td>{{ noticia.title }}</td>
+				<td>{{ noticia.date }}</td>
+				<td><a href="{{ path('regne_hostil_club_admin_edit_noticia', {'id' : noticia.id }) }}">Edit</td>
+				<td><a href="{{ path('regne_hostil_club_admin_delete_noticia', {'id' : noticia.id }) }}">Delete</td>
+			</tr>
+		{% endfor %}
+		</tbody>
+	</table>
+{% endblock %}

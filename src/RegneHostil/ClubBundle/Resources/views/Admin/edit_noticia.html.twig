@@ -1,0 +1,16 @@
+{% extends 'RegneHostilClubBundle:Admin:layout.html.twig' %}
+
+{% block content %}
+
+{% if updated %}
+		<div class='alert alert-success'>
+			Notícia actualitzada!
+		</div>
+{% endif %}
+
+<form action="{{ path('regne_hostil_club_admin_edit_noticia', {'id' : id}) }}" method="post" {{ form_enctype(form) }}>
+    {{ form_widget(form) }}
+
+    <input type="submit" />
+</form>
+{% endblock %}

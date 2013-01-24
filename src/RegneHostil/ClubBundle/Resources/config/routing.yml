@@ -2,10 +2,6 @@ regne_hostil_club_homepage:
     pattern:  /
     defaults: { _controller: RegneHostilClubBundle:Default:index }
 
-regne_hostil_club_create_noticia:
-    pattern: /create
-    defaults: { _controller: RegneHostilClubBundle:Default:create }
-
 regne_hostil_club_about_us:
     pattern: /about
     defaults: { _controller: RegneHostilClubBundle:Default:about }
@@ -13,3 +9,23 @@ regne_hostil_club_about_us:
 regne_hostil_club_contact:
     pattern: /contact
     defaults: { _controller: RegneHostilClubBundle:Default:contact }
+
+regne_hostil_club_admin:
+    pattern: /admin
+    defaults: { _controller: RegneHostilClubBundle:Admin:index }
+
+regne_hostil_club_admin_create_noticia:
+    pattern: /admin/create
+    defaults: { _controller: RegneHostilClubBundle:Admin:createNoticia }
+
+regne_hostil_club_admin_noticies:
+    pattern: /admin/noticies
+    defaults: { _controller: RegneHostilClubBundle:Admin:llistarNoticies }
+
+regne_hostil_club_admin_edit_noticia:
+    pattern: /admin/noticia/{id}
+    defaults: { _controller: RegneHostilClubBundle:Admin:editNoticia }
+
+regne_hostil_club_admin_delete_noticia:
+    pattern: /admin/noticia/{id}/delete
+    defaults: { _controller: RegneHostilClubBundle:Admin:deleteNoticia }

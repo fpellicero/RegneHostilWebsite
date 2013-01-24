@@ -69,24 +69,66 @@ class DefaultController extends Controller
 	* Controller method for the contact page
 	*
 	*/
-	public function contactAction()
+	public function contactAction(Request $request)
 	{
+		$success = false;
+		$error = false;
+		$successMessage = "";
+		$errorMessage = "";
+		/* Generate the captcha script to embed */
+		require_once('bundles/regnehostilclub/recaptchalib.php');
+		$publickey = "6LeVw8cSAAAAAC1mXZ_IQI-UCUl2XNGy6g3Ex0St";
+		$captcha = recaptcha_get_html($publickey);
+		
 		$form = $this->createFormBuilder()
 			->add('name','text')
 			->add('email','email')
 			->add('text','textarea')
 			->getForm();
 
-		/* Generate the captcha script to embed */
-		require_once('bundles/regnehostilclub/recaptchalib.php');
-		$publickey = "6LeVw8cSAAAAAC1mXZ_IQI-UCUl2XNGy6g3Ex0St";
-		$captcha = recaptcha_get_html($publickey);
+		/* Check if it's a form submission */
+		if($request->isMethod('POST')) {
+			/* Check the captcha answer */
+			require_once('bundles/regnehostilclub/recaptchalib.php');
+			$privatekey = "6LeVw8cSAAAAAMhcG1pEZaOXmWdry8o_U4qqWp2a";
+			$resp = recaptcha_check_answer ($privatekey,
+										$_SERVER["REMOTE_ADDR"],
+										$_POST["recaptcha_challenge_field"],
+										$_POST["recaptcha_response_field"]);
 
+			if (!$resp->is_valid) {
+				// Captcha incorrecte, tornem enrere i no fem res.
+				$error = true;
+				$errorMessage = "Bad captcha solution";
+			} else {
+				// Captcha correcte, seguim endavant i enviem el mail.
+				$data = $form->getData();
+				
+				$to = 'pelly.obn91@gmail.com';
+				$subject = 'Formulari de Contacte';
+				$text = 'Nom: ' . $data['name'] . '\nE-mail: ' . $data['email'] . '\n\n' . $data['text'];
+				
+				$sended = mail($to,$subject,$text);
+				if($sended) {
+					$success = true;
+					$successMessage = "La teva consulta s'ha enviat correctament! Ens posarem en contacte amb tu tant aviat com sigui possible.";
+				}else {
+					$error = true;
+					$errorMessage = "La teva consulta s'ha enviat correctament! Ens posarem en contacte amb tu tant aviat com sigui possible.";
+				}
+			}
+		}
+
+		/* Render the form */
 		return $this->render(
 			'RegneHostilClubBundle:Default:contact.html.twig',
 			array(
 				'form' => $form->createView(),
-				'captcha' => $captcha
+				'captcha' => $captcha,
+				'error' => $error,
+				'success' => $success,
+				'successMessage' => $successMessage,
+				'errorMessage' => $errorMessage
 				)
 			);
 	}
@@ -95,39 +137,5 @@ class DefaultController extends Controller
 	 * Controller method to create Noticies
 	 *
 	 */
-	public function createAction(Request $request)
-	{
-		$noticia = new Noticia();
-
-		$form = $this->createFormBuilder($noticia)
-			->add('title','text')
-			->add('date','text')
-			->add('text','textarea')
-			->getForm();
-
-		if ($request->isMethod('POST')) {
-			$form->bind($request);
-
-			if($form->isValid()) {
-				$em = $this->getDoctrine()->getManager();
-				$em->persist($noticia);
-				$em->flush();
-
-				return $this->render(
-					'RegneHostilClubBundle:Admin:create.html.twig',
-					array(
-						'form' => $form->createView(),
-						'created' => true
-					)
-				);
-			}
-		}
-		return $this->render(
-			'RegneHostilClubBundle:Admin:create.html.twig',
-			array(
-					'form' => $form->createView(),
-					'created' => false
-			)
-		);
-	}
+	
 }

@@ -1,7 +1,8 @@
-{% extends 'RegneHostilClubBundle::layout.html.twig' %}
+{% extends 'RegneHostilClubBundle:Admin:layout.html.twig' %}
 
 {% block content %}
-<form action="{{ path('regne_hostil_club_create_noticia') }}" method="post" {{ form_enctype(form) }}>
+<h2>Nova notícia</h2>
+<form action="{{ path('regne_hostil_club_admin_create_noticia') }}" method="post" {{ form_enctype(form) }}>
     {{ form_widget(form) }}
 
     <input type="submit" />
