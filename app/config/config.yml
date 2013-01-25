@@ -58,3 +58,9 @@ swiftmailer:
     username:  "%mailer_user%"
     password:  "%mailer_password%"
     spool:     { type: memory }
+
+services:
+    RegneHostil.ClubBundle.listener.preexecute:
+        class: RegneHostil\ClubBundle\Listener\PreExecute
+        tags:
+            - { name: kernel.event_listener, event: kernel.controller, method: onKernelController }

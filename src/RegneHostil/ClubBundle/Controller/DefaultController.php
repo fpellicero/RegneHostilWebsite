@@ -11,6 +11,12 @@ use RegneHostil\ClubBundle\Entity\Quote;
 
 class DefaultController extends Controller
 {
+	private $quote = "";
+
+	public function preExecute()
+	{
+		die("It Works!");
+	}
 	/**
 	 * Controller method for the homepage
 	 *
@@ -54,7 +60,8 @@ class DefaultController extends Controller
 				'noticies' => $noticies,
 				'numpage' => $page,
 				'newer' => $newer,
-				'older' => $older
+				'older' => $older,
+				'quote' => $quote
 			)
 		);
     }
