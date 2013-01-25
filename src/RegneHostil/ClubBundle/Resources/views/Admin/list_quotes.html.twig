@@ -16,7 +16,7 @@
 				<td>{{ quote.quote }}</td>
 				<td>{{ quote.valid }}</td>
 				<td><a href="{{ path('regne_hostil_club_admin_edit_quote', {'id' : quote.id }) }}">Edit</td>
-				<td><a href="{{ path('regne_hostil_club_admin_delete_noticia', {'id' : quote.id }) }}">Delete</td>
+				<td><a href="{{ path('regne_hostil_club_admin_delete_quote', {'id' : quote.id }) }}">Delete</td>
 			</tr>
 		{% endfor %}
 		</tbody>

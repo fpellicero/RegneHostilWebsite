@@ -160,4 +160,44 @@ class AdminController extends Controller
 		);
 	}
 
+	public function deleteQuoteAction(Request $request, $id)
+	{
+		$em = $this->getDoctrine()->getManager();
+    	$quote = $em->getRepository('RegneHostilClubBundle:Quote')->find($id);
+
+    	$em->remove($quote);
+    	$em->flush();
+
+    	return new RedirectResponse($this->generateUrl('regne_hostil_club_admin_quotes'));	
+	}
+
+	public function createQuoteAction(Request $request)
+	{
+		$quote = new Quote();
+
+		$form = $this->createFormBuilder($quote)
+			->add('quote','textarea')
+			->add('valid','integer')
+			->getForm();
+
+		if ($request->isMethod('POST')) {
+			$form->bind($request);
+
+			if($form->isValid()) {
+				$em = $this->getDoctrine()->getManager();
+				$em->persist($quote);
+				$em->flush();
+
+				return new RedirectResponse($this->generateUrl('regne_hostil_club_admin_quotes')); 
+			}
+		}
+		return $this->render(
+			'RegneHostilClubBundle:Admin:create_quote.html.twig',
+			array(
+					'form' => $form->createView(),
+					'created' => false
+			)
+		);
+	}
+
 }

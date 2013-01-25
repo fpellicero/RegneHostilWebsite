@@ -15,7 +15,7 @@ regne_hostil_club_admin:
     defaults: { _controller: RegneHostilClubBundle:Admin:index }
 
 regne_hostil_club_admin_create_noticia:
-    pattern: /admin/create
+    pattern: /admin/noticies/new
     defaults: { _controller: RegneHostilClubBundle:Admin:createNoticia }
 
 regne_hostil_club_admin_noticies:
@@ -34,6 +34,14 @@ regne_hostil_club_admin_quotes:
     pattern: /admin/quotes
     defaults: { _controller: RegneHostilClubBundle:Admin:listQuotes }
 
+regne_hostil_club_admin_create_quote:
+    pattern: /admin/quotes/new
+    defaults: { _controller: RegneHostilClubBundle:Admin:createQuote }
+
 regne_hostil_club_admin_edit_quote:
     pattern: /admin/quote/{id}
     defaults: { _controller: RegneHostilClubBundle:Admin:editQuote }
+
+regne_hostil_club_admin_delete_quote:
+    pattern: /admin/quote/{id}/delete
+    defaults: { _controller: RegneHostilClubBundle:Admin:deleteQuote }
