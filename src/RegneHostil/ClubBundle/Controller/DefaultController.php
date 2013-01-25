@@ -11,12 +11,22 @@ use RegneHostil\ClubBundle\Entity\Quote;
 
 class DefaultController extends Controller
 {
-	private $quote = "";
+	private $quote;
+
+	private function getRandomQuote() {
+		$quotes = $this->getDoctrine()
+			->getRepository('RegneHostilClubBundle:Quote')
+			->findAll();
+
+		$quote = array_rand($quotes,1);
+		return nl2br($quotes[$quote]->getQuote());
+	}
 
 	public function preExecute()
 	{
-		die("It Works!");
+		$this->quote = $this->getRandomQuote();
 	}
+
 	/**
 	 * Controller method for the homepage
 	 *
@@ -61,7 +71,7 @@ class DefaultController extends Controller
 				'numpage' => $page,
 				'newer' => $newer,
 				'older' => $older,
-				'quote' => $quote
+				'quote' => $this->quote
 			)
 		);
     }

@@ -92,17 +92,4 @@ class Quote
         return $this->valid;
     }
 
-	/**
-	 * Returns a random quote fetched from the database
-	 *
-	 */
-	public function getRandomQuote() 
-	{
-		$quotes = $this->getDoctrine()
-			->getRepository('RegneHostilClubBundle:Quote')
-			->findAll();
-
-		$quote = array_rand($quotes,1);
-		return $quote;
-	}
 }
