@@ -33,3 +33,7 @@ regne_hostil_club_admin_delete_noticia:
 regne_hostil_club_admin_quotes:
     pattern: /admin/quotes
     defaults: { _controller: RegneHostilClubBundle:Admin:listQuotes }
+
+regne_hostil_club_admin_edit_quote:
+    pattern: /admin/quote/{id}
+    defaults: { _controller: RegneHostilClubBundle:Admin:editQuote }

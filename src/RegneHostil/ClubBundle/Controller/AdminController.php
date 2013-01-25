@@ -124,4 +124,40 @@ class AdminController extends Controller
 			);
 	}
 
+	public function editQuoteAction(Request $request, $id) {
+		$em = $this->getDoctrine()->getManager();
+    	$quote = $em->getRepository('RegneHostilClubBundle:Quote')->find($id);
+
+		$form = $this->createFormBuilder($quote)
+			->add('quote','textarea')
+			->add('valid','integer')
+			->getForm();
+		
+		if ($request->isMethod('POST')) {
+			$form->bind($request);
+
+			if($form->isValid()) {
+				$em->flush();
+
+				return $this->render(
+					'RegneHostilClubBundle:Admin:edit_noticia.html.twig',
+					array(
+						'form' => $form->createView(),
+						'updated' => true,
+						'id' => $id
+					)
+				);
+			}
+		}
+		
+		return $this->render(
+			'RegneHostilClubBundle:Admin:edit_quote.html.twig',
+			array(
+					'form' => $form->createView(),
+					'updated' => false,
+					'id' => $id
+			)
+		);
+	}
+
 }
