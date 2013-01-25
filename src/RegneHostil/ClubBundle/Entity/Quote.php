@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Quote
  *
- * @ORM\Table()
+ * @ORM\Table(name="quote")
  * @ORM\Entity
  */
 class Quote

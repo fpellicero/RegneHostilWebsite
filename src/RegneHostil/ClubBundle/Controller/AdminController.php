@@ -111,4 +111,17 @@ class AdminController extends Controller
     	return new RedirectResponse($this->generateUrl('regne_hostil_club_admin_noticies'));	
 	}
 
+	public function listQuotesAction() {
+		$quotes = $this->getDoctrine()
+			->getRepository('RegneHostilClubBundle:Quote')
+			->findAll();
+		
+		return $this->render(
+			'RegneHostilClubBundle:Admin:list_quotes.html.twig',
+			array(
+				'quotes' => $quotes
+				)
+			);
+	}
+
 }

@@ -136,6 +136,35 @@ class DefaultController extends Controller
 			);
 	}
 
+	public function createQuoteAction(Request $request) {
+		$quote = new Quote();
+
+		$quote->setValid(0);
+
+		$form = $this->createFormBuilder($quote)
+			->add('quote','textarea')
+			->getForm();
+
+		if ($request->isMethod('POST')) {
+			$form->bind($request);
+
+			if($form->isValid()) {
+				$em = $this->getDoctrine()->getManager();
+				$em->persist($noticia);
+				$em->flush();
+
+				return new RedirectResponse($this->generateUrl('regne_hostil_club_homepage')); 
+			}
+		}
+		return $this->render(
+			'RegneHostilClubBundle:Admin:create.html.twig',
+			array(
+					'form' => $form->createView(),
+					'created' => false
+			)
+		);
+	}
+
 	/**
 	 * Controller method to create Noticies
 	 *

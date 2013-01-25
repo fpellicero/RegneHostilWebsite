@@ -128,5 +128,26 @@ class Noticia
         return $this->lang;
     }
 
-   
+    /**
+     * Set date
+     *
+     * @param \DateTime $date
+     * @return Noticia
+     */
+    public function setDate($date)
+    {
+        $this->date = $date;
+    
+        return $this;
+    }
+
+    /**
+     * Get date
+     *
+     * @return \DateTime 
+     */
+    public function getDate()
+    {
+        return $this->date;
+    }
 }
