@@ -10,6 +10,14 @@ regne_hostil_club_contact:
     pattern: /contact
     defaults: { _controller: RegneHostilClubBundle:Default:contact }
 
+regne_hostil_club_gallery:
+    pattern: /gallery
+    defaults: { _controller: RegneHostilClubBundle:Default:galleryIndex }
+
+regne_hostil_club_show_album:
+    pattern: /gallery/{album}
+    defaults: { _controller: RegneHostilClubBundle:Default:showAlbum }
+
 regne_hostil_club_admin:
     pattern: /admin
     defaults: { _controller: RegneHostilClubBundle:Admin:index }

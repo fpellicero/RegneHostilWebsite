@@ -1,0 +1,16 @@
+{% extends 'RegneHostilClubBundle:Admin:layout.html.twig' %}
+
+{% block content %}
+	<style type="text/css">
+		textarea {
+			width: 90%;
+			height: 30%;
+		}
+	</style>
+<h2>Nou Quote</h2>
+<form action="{{ path('regne_hostil_club_admin_create_quote') }}" method="post" {{ form_enctype(form) }}>
+    {{ form_widget(form) }}
+
+    <input type="submit" />
+</form>
+{% endblock %}

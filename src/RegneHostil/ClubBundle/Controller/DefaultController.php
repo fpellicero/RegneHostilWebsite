@@ -11,7 +11,8 @@ use RegneHostil\ClubBundle\Entity\Quote;
 
 class DefaultController extends Controller
 {
-	private $quote;
+	private $paramsArray;
+	private $quoteForm;
 
 	private function getRandomQuote() {
 		$quotes = $this->getDoctrine()
@@ -24,7 +25,7 @@ class DefaultController extends Controller
 
 	public function preExecute()
 	{
-		$this->quote = $this->getRandomQuote();
+		$this->arrayParams['quote'] = $this->getRandomQuote();
 	}
 
 	/**
@@ -64,15 +65,14 @@ class DefaultController extends Controller
 			$newer = false;
 		}
 
+		$this->arrayParams['noticies'] = $noticies;
+		$this->arrayParams['numpage'] = $page;
+		$this->arrayParams['newer'] = $newer;
+		$this->arrayParams['older'] = $older;
+
 		return $this->render(
 			'RegneHostilClubBundle:Default:index.html.twig',
-			array(
-				'noticies' => $noticies,
-				'numpage' => $page,
-				'newer' => $newer,
-				'older' => $older,
-				'quote' => $this->quote
-			)
+			$this->arrayParams
 		);
     }
 
@@ -82,7 +82,10 @@ class DefaultController extends Controller
 	 */
 	public function aboutAction()
 	{
-			return $this->render('RegneHostilClubBundle:Default:about.html.twig');
+			return $this->render(
+				'RegneHostilClubBundle:Default:about.html.twig',
+				$this->arrayParams
+				);
 	}
 
 	/**
@@ -182,9 +185,33 @@ class DefaultController extends Controller
 		);
 	}
 
-	/**
-	 * Controller method to create Noticies
-	 *
-	 */
+	public function galleryIndexAction()
+	{
+			// Si no hem triat un album
+			$albums = scandir($_SERVER['DOCUMENT_ROOT'] . "/gallery/");	// Obtenim tots els directoris de la galeria
+			unset($albums[0]);														// Fem unset dels directoris ./ i ../
+			unset($albums[1]);
+			// Li passem el nom dels albums a Smarty i indiquem que no tenim seleccionat cap album
+			$this->arrayParams['albums'] = $albums;
+
+			return $this->render(
+				'RegneHostilClubBundle:Default:gallery_index.html.twig',
+				$this->arrayParams
+				);
+	}
+
+	public function showAlbumAction($album)
+	{
+		$photos = scandir($_SERVER['DOCUMENT_ROOT'] ."/gallery/" . $album);
+		unset($photos[0]); unset($photos[1]);
+
+		$this->arrayParams['album'] = $album;
+		$this->arrayParams['photos'] = $photos;
+		
+		return $this->render(
+			'RegneHostilClubBundle:Default:gallery_show_album.html.twig',
+			$this->arrayParams
+			);
+	}
 	
 }
