@@ -154,16 +154,15 @@ class DefaultController extends Controller
 		}
 
 		/* Render the form */
+		$this->arrayParams['form'] = $form->createView();
+		$this->arrayParams['captcha'] = $captcha;
+		$this->arrayParams['error'] = $error;
+		$this->arrayParams['success'] = $success;
+		$this->arrayParams['successMessage'] = $successMessage;
+		$this->arrayParams['errorMessage'] = $errorMessage;
 		return $this->render(
 			'RegneHostilClubBundle:Default:contact.html.twig',
-			array(
-				'form' => $form->createView(),
-				'captcha' => $captcha,
-				'error' => $error,
-				'success' => $success,
-				'successMessage' => $successMessage,
-				'errorMessage' => $errorMessage
-				)
+			$this->arrayParams
 			);
 	}
 
