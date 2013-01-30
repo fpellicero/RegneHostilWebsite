@@ -5,14 +5,16 @@ namespace RegneHostil\ClubBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\RedirectResponse;
+
 
 use RegneHostil\ClubBundle\Entity\Noticia;
 use RegneHostil\ClubBundle\Entity\Quote;
 
 class DefaultController extends Controller
 {
-	private $paramsArray;
-	private $quoteForm;
+	private $arrayParams;
+	private $lang;
 
 	private function getRandomQuote() {
 		$quotes = $this->getDoctrine()
@@ -25,9 +27,18 @@ class DefaultController extends Controller
 
 	public function preExecute()
 	{
+		if(!isset($_SESSION['lang'])) {
+			$_SESSION['lang'] = 'es';
+		}
+		$this->arrayParams['lang'] = $_SESSION['lang'];
 		$this->arrayParams['quote'] = $this->getRandomQuote();
 	}
 
+	public function changeLanguageAction($lang)
+	{
+		$_SESSION['lang'] = $lang;
+		return new RedirectResponse($_SERVER['HTTP_REFERER']);
+	}
 	/**
 	 * Controller method for the homepage
 	 *
@@ -46,7 +57,7 @@ class DefaultController extends Controller
 			->getRepository('RegneHostilClubBundle:Noticia');
 		$query = $repository->createQueryBuilder('n')
 			->where('n.lang = :lang')
-			->setParameter('lang', 'cat')
+			->setParameter('lang', $this->arrayParams['lang'])
 			->setFirstResult( $offset )
 			->setMaxResults ( 5 )
 			->orderBy('n.date', 'DESC')
@@ -215,3 +226,5 @@ class DefaultController extends Controller
 	}
 	
 }
+
+?>

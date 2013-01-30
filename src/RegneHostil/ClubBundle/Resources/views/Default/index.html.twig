@@ -5,9 +5,7 @@
 		<div class="entry">
 			<h1>{{ noticia.title }}</h1>
 			<div class="date">{{ noticia.date|date("d/m/Y") }}</div>
-			<div class="row">
 				<div class="entry_text">{{ noticia.text|raw }}</div>
-			</div>
 		</div>
 	{% endfor %}
 

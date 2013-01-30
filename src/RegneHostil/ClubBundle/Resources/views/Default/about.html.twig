@@ -1,6 +1,8 @@
 {% extends 'RegneHostilClubBundle:Default:layout.html.twig' %}
 
 {% block content %}
+
+{% if lang == 'cat' %}
 	<div class=entry>
 		<h1>Qui som?</h1>
 		<center>
@@ -59,4 +61,75 @@
 			</p>
 		</div>
 	</div>
+{% elseif lang == 'es' %}
+	<div class=entry>
+		<h1>¿Quien somos?</h1>
+		<div class="embed">
+			<iframe width="640" height="360" src="http://www.youtube.com/embed/eyoSGkf9zrw" frameborder="0" allowfullscreen></iframe>
+		</div>
+	</div>
+	
+	<div class=entry>
+		<h1>Objetivos</h1>
+		<div class=entry_text>
+			<p>
+				El objetivo principal de Regne Hostil es el de dar a conocer el mundillo del rol en vivo,
+				el soft-combat y en general la temática medieval-fantástica a todos los que quieran
+				participar en nuestras actividades, sin límite de edad ni condición.
+			</p>
+			<p>
+				Además, conscientes de la fama que desgraciadamente arrastra aún el sector del rol,
+				uno de los objetivos que Regne Hostil tiene más presente es el de promover este tipo
+				de afición como pasatiempo válido para ocupar los ratos de ocio, y que incluso ofrece
+				la posibilidad a pequeños y mayores de colaborar y trabajar en equipo compartiendo un
+				mismo hobby y, por consiguiente, aprender de los demás.
+			</p>
+		</div>
+	</div>
+    
+	<div class=entry>
+            <h1>Rol</h1>
+			<div class=entry_text>
+				<p>
+					Los juegos de rol tal como los conocemos hoy en día tienen su origen durante la década
+					de los sesenta en Estados Unidos, donde finalmente se publicaría uno de los juegos más
+					famosos de rol: Dungeons and Dragons.
+				</p>
+				<p>
+					Un juego de rol es un juego interpretativo y narrativo en el que los jugadores toman el
+					rol de los personajes durante el transcurso de una historia o trama, en la cual interpretan
+					sus diálogos y acciones. Generalmente, no existe ningún guión a seguir ya que el
+					desarrollo de la historia depende completamente de las decisiones y acciones de los
+					propios jugadores que son quienes controlan las vidas de sus personajes. En los juegos
+					de rol destaca el hecho de que la imaginación, la narrativa, la originalidad y el ingenio
+					son primordiales para el correcto desarrollo de este tipo de juego.
+				</p>
+				<p>
+					Es por todo esto que aspiramos a acercar y a mostrar al público en general esta faceta
+					poco conocida y a menudo enmascarada por los medios de comunicación.
+				</p>
+			</div>
+	</div>
+
+    <div class=entry>    
+		<h1>Ofertas</h1>
+		<div class=entry_text>
+			<p>
+				Como club, organizamos todo tipo de actividades relacionadas con el mundo del
+				ocio y, en concreto, con los juegos de rol, simulación y estrategia. Las actividades
+				que normalmente se llevan a cabo son roles en vivo, wargames, torneos de juegos de
+				mesa, fiestas temáticas y espectáculos de índole medieval en ferias y mercados de toda
+				Cataluña.
+			</p>
+			<p>
+				No obstante, toda la Junta Directiva del club tiene siempre en mente distintos tipos de
+			   actividades para llevar a cabo y, por lo tanto, como club estamos abiertos a cualquier
+			   clase de actividad relacionada con este ámbito y en la que se permita alcanzar los
+			   objetivos mencionados anteriormente. En nuestra sección de noticias se anuncian los
+			   eventos organizados por Regne Hostil. ¡Si queréis conocernos mejor, estad al tanto de
+			   las noticias!
+			</p>
+		</div>
+	</div>
+{% endif %}
 {% endblock %}

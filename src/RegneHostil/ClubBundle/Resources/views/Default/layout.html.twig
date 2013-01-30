@@ -36,10 +36,10 @@
 						<center>
                                 <img src="{{ asset('bundles/regnehostilclub/img/logo-navbar.png') }}">
                                 <h2>Idioma</h2>
-                                <a href="#">
+                                <a href="{{ path('regne_hostil_club_change_language', {'lang' : 'cat' }) }}">
                                         <img src="{{ asset('bundles/regnehostilclub/img/icon_cat.jpg') }}">
                                 </a>
-                                <a href="#">
+                                <a href="{{ path('regne_hostil_club_change_language', {'lang' : 'es' }) }}">
                                         <img src="{{ asset('bundles/regnehostilclub/img/icon_es.jpg') }}">
                                 </a>
                                 <h2>El Club</h2>
