@@ -1,11 +1,24 @@
 {% extends 'RegneHostilClubBundle:Default:layout.html.twig' %}
 
+{% form_theme form _self %}
+
+{% block form_row %}
+{% spaceless %}
+    <div class="control-group">
+		{{ form_label(form, label, { 'label_attr': { 'class': 'control-label' } }) }}
+        <div class="controls">
+            {{ form_widget(form) }}
+            {{ form_errors(form) }}
+        </div>
+    </div>
+{% endspaceless %}
+{% endblock %}
+
 {% block content %}
 
 <style type="text/css">
 	textarea {
-		width: 90%;
-		height: 45%;
+		height: 20%;
 	}
 </style>
 
@@ -24,7 +37,7 @@
 		</div>
 	{% endif %}
 
-	<form class="form_horizontal" action="{{ path('regne_hostil_club_contact') }}" method="post" {{ form_enctype(form) }}>
+	<form class="form-horizontal" action="{{ path('regne_hostil_club_contact') }}" method="post" {{ form_enctype(form) }}>
 	    {{ form_widget(form) }}
 	    <div class="well">
 	    	<center>
