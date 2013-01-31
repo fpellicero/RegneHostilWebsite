@@ -1,0 +1,57 @@
+<?php
+
+namespace RegneHostil\KingdomsBundle\Controller;
+
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use RegneHostil\KingdomsBundle\Entity\Noticia;
+
+
+
+class DefaultController extends Controller
+{
+    public function indexAction()
+    {
+    	// We set the offset based on the page parameter
+		$page = 0;
+		if(isset($_GET['page'])) {
+			$page = $_GET['page'];
+		}
+		$offset = $page * 5;
+
+		// Building the query to fetch the objects from db
+		$repository = $this->getDoctrine()
+			->getRepository('RegneHostilKingdomsBundle:Noticia');
+		$query = $repository->createQueryBuilder('n')
+			->where('n.lang = :lang')
+			->setParameter('lang', 'cat')
+			->setFirstResult( $offset )
+			->setMaxResults ( 5 )
+			->orderBy('n.date', 'DESC')
+			->getQuery();
+
+		// Fetch the objects
+		$noticies = $query->getResult();
+
+		// Decide wether to put the 'older' and 'newer' button or not
+		$older = true;
+		if(sizeof($noticies) < 5) {
+			$older = false;	
+		}
+		$newer = true;
+		if($offset == 0) {
+			$newer = false;
+		}
+
+		return $this->render(
+			'RegneHostilKingdomsBundle:Default:index.html.twig',
+			array(
+				'noticies' => $noticies,
+				'numpage' => $page,
+				'newer' => $newer,
+				'older' => $older
+				)
+		);
+
+        return $this->render('RegneHostilKingdomsBundle:Default:index.html.twig');
+    }
+}

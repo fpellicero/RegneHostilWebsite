@@ -1,0 +1,25 @@
+{% extends 'RegneHostilKingdomsBundle:Default:layout.html.twig' %}
+
+{% block content %}
+	{% for noticia in noticies %}
+		<div class="entry">
+			<h1>{{ noticia.title }}</h1>
+			<div class="date">{{ noticia.date|date("d/m/Y") }}</div>
+				<div class="entry_text">{{ noticia.text|raw }}</div>
+		</div>
+	{% endfor %}
+
+	<ul class="pager">
+		{% if newer == true %}
+			<li class="next">
+				<a href='{{ path('regne_hostil_club_homepage', {'page' : numpage - 1}) }}'>Newer &rarr;</a>
+			</li>
+		{% endif %}
+		{% if older == true %}
+			<li class="previous">
+				<a href='{{ path('regne_hostil_club_homepage', {'page' : numpage + 1}) }}'>&larr; Older</a>
+			</li>
+		{% endif %}
+	</ul>
+
+{% endblock %}

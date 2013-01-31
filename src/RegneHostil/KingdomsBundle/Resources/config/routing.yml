@@ -1,0 +1,3 @@
+regne_hostil_kingdoms_homepage:
+    pattern:  /kingdoms
+    defaults: { _controller: RegneHostilKingdomsBundle:Default:index }

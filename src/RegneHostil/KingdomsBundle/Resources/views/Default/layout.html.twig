@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+
+  <head>
+    <title>Regne Hostil</title>
+    
+    <!-- Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Calligraffitti' rel='stylesheet' type='text/css'>
+
+    <!-- JQuery -->
+    <script src=//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js></script>
+    
+    <!-- Twitter Bootstrap -->
+    <link rel=stylesheet href="{{ asset('bundles/regnehostilclub/css/bootstrap.css') }}">
+    <script type="text/javascript" src="{{ asset('bundles/regnehostilclub/js/bootstrap.js') }}"></script>
+    
+    <!-- Activem responsive bootstrap -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{{ asset('bundles/regnehostilclub/css/bootstrap-responsive.css')}}" rel="stylesheet">
+    
+    <!-- Estils propis -->
+    <link rel=stylesheet href="{{ asset('bundles/regnehostilclub/css/general.css') }}">
+    <link rel=stylesheet href="{{ asset('bundles/regnehostilclub/css/main.css') }}">
+    
+    <!-- Lightbox per la galeria -->
+    <link rel="stylesheet" type="text/css" href="{{ asset('bundles/regnehostilclub/css/shadowbox.css') }}">
+    <script type="text/javascript" src="{{ asset('bundles/regnehostilclub/js/shadowbox.js') }}"></script>
+    <script type="text/javascript">
+      Shadowbox.init();
+    </script>
+  </head>
+
+
+  <body>
+    <div class="container-fluid">
+      <div class="row-fluid">
+        <!-- Barra de navegació esquerra (nomes escriptori) -->
+        <div class="span3 offset1 visible-desktop">
+          <div class="left-bar">
+            <center>
+              <img src="{{ asset('bundles/regnehostilkingdoms/img/logo-navbar.png') }}">
+              <h2>Idioma</h2>        
+              <a href="/kingdoms/index/changeLanguage/cat">
+                <img src="{{ asset('bundles/regnehostilclub/img/icon_cat.jpg') }}">
+              </a>
+              &nbsp &nbsp
+              <a href="/kingdoms/index/changeLanguage/es">
+                <img src="{{ asset('bundles/regnehostilclub/img/icon_es.jpg') }}">
+              </a>
+
+              <h2>Kingdoms</h2>
+              <ul>
+                <li>
+                  <a href="/kingdoms/index/news">
+                    Portada
+                  </a>
+                </li>
+              <li>
+                  <a href="/kingdoms/inscripcions/info">
+                      Inscripcions
+                  </a>
+                </li>
+                <li>
+                  <a href="/forum">
+                    Forum
+                  </a>
+                </li>
+              </ul>
+              
+              <h2>
+                Kingdomsfest
+              </h2>
+              <ul>
+                <li>
+                  <a href="/kingdoms/about/generalInfo/">
+                      Informació de la partida
+                  </a>
+                </li>
+                
+                <li>
+                  <a href="/kingdoms/about/concursLiterari/">
+                      Concurs Literari
+                  </a>
+                </li>
+                
+                <li>
+                  <a href="/kingdoms/chronicles/archive/">
+                      Cròniques del Regne
+                  </a>
+                </li>
+                
+                <li>
+                  <a href="/kingdoms/about/camps/">
+                      Campaments
+                  </a>
+                </li>
+                
+                <li>
+                  <a href="/kingdoms/about/rules/">
+                      Reglament
+                  </a>
+                </li>
+              </ul>
+              
+            </center>
+          </div>
+        </div>
+        
+        <!-- Contingut escriptori -->
+        <div class="span6 visible-desktop">
+          <center>
+            <a href="http:\\www.kingdoms.regnehostil.com">
+              <img src="{{ asset('bundles/regnehostilkingdoms/img/site_logo.png') }}">
+            </a>
+            {% block content %}{% endblock %}
+          </center>
+        </div>
+                
+      </div>
+    </div>
+  </body>
+</html>

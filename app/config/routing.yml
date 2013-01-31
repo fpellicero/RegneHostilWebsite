@@ -1,3 +1,7 @@
+regne_hostil_kingdoms:
+    resource: "@RegneHostilKingdomsBundle/Resources/config/routing.yml"
+    prefix:   /
+
 regne_hostil_club:
     resource: "@RegneHostilClubBundle/Resources/config/routing.yml"
     prefix:   /

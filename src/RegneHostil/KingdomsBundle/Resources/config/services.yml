@@ -1,0 +1,7 @@
+parameters:
+#    regne_hostil_kingdoms.example.class: RegneHostil\KingdomsBundle\Example
+
+services:
+#    regne_hostil_kingdoms.example:
+#        class: %regne_hostil_kingdoms.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]
