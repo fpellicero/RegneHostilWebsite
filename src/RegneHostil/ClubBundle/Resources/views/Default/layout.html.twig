@@ -35,23 +35,30 @@
 					<div class="left-bar">
 						<center>
                                 <img src="{{ asset('bundles/regnehostilclub/img/logo-navbar.png') }}">
-                                <h2>Idioma</h2>
+                                <h2>
+                                    {% trans %}Idioma{% endtrans %}
+                                </h2>
                                 <a href="{{ path('regne_hostil_club_change_language', {'lang' : 'cat' }) }}">
                                         <img src="{{ asset('bundles/regnehostilclub/img/icon_cat.jpg') }}">
                                 </a>
                                 <a href="{{ path('regne_hostil_club_change_language', {'lang' : 'es' }) }}">
                                         <img src="{{ asset('bundles/regnehostilclub/img/icon_es.jpg') }}">
                                 </a>
-                                <h2>El Club</h2>
+                                <h2>{% trans %}El Club{% endtrans %}</h2>
                                 <ul>
                                     <li>
-										<a href="{{ path('regne_hostil_club_homepage') }}">Portada</a>
+										<a href="{{ path('regne_hostil_club_homepage') }}">
+                                            {% trans %}Portada{% endtrans %}
+                                        </a>
                                     </li>
                                     <li>
-										<a href="{{ path('regne_hostil_club_about_us') }}">Qui som?</a>
+										<a href="{{ path('regne_hostil_club_about_us') }}">
+                                            {% trans %}Qui som?{% endtrans %}</a>
                                     </li>
                                     <li>
-                                        <a href="{{ path('regne_hostil_club_contact') }}">Contacta</a>
+                                        <a href="{{ path('regne_hostil_club_contact') }}">
+                                            {% trans %}Contacta{% endtrans %}
+                                        </a>
                                     </li>
                                     <li>
                                         <a href="#">Kingdoms</a>
@@ -61,10 +68,15 @@
                                     </li>
                                 </ul>
 
-                                <h2>Multimèdia</h2>
-                                <a href="{{ path('regne_hostil_club_gallery')}}">Galeria</a>
+                                <h2>
+                                    {% trans %}Multimèdia{% endtrans %}
+                                </h2>
+                                <a href="{{ path('regne_hostil_club_gallery')}}">
+                                    {% trans %}Galeria{% endtrans %}</a>
 
-                                <h2>Pròximes activitats</h2>
+                                <h2>
+                                    {% trans %}Pròximes activitats{% endtrans %}
+                                </h2>
 
 						</center>
 					</div>

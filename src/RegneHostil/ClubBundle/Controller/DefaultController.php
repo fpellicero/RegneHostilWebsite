@@ -27,16 +27,22 @@ class DefaultController extends Controller
 
 	public function preExecute()
 	{
-		if(!isset($_SESSION['lang'])) {
-			$_SESSION['lang'] = 'es';
+		$session = $this->get('session');
+
+		if($session->get('_locale') == NULL) {
+			$session->set('_locale', 'cat');
 		}
-		$this->arrayParams['lang'] = $_SESSION['lang'];
+
+		$this->get('request')->setLocale($session->get('_locale'));;
+		$this->arrayParams['lang'] = $session->get('_locale');
 		$this->arrayParams['quote'] = $this->getRandomQuote();
+
+
 	}
 
 	public function changeLanguageAction($lang)
 	{
-		$_SESSION['lang'] = $lang;
+		$this->get('session')->set('_locale', $lang);
 		return new RedirectResponse($_SERVER['HTTP_REFERER']);
 	}
 	/**
