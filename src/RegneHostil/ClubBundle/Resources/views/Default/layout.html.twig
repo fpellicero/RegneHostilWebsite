@@ -5,10 +5,10 @@
 		<link href='http://fonts.googleapis.com/css?family=Calligraffitti' rel='stylesheet' type='text/css'>
 
 		<!-- JQuery -->
-		<script src=//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js></script>
+		<script src='//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js'></script>
 		
 		<!-- Twitter Bootstrap -->
-		<link rel=stylesheet href="{{ asset('bundles/regnehostilclub/css/bootstrap.css') }}">
+		<link rel='stylesheet' href="{{ asset('bundles/regnehostilclub/css/bootstrap.css') }}">
 		<script type="text/javascript" src="{{ asset('bundles/regnehostilclub/js/bootstrap.js') }}"></script>
 		
 		<!-- Activem responsive bootstrap -->
@@ -39,8 +39,9 @@
                                     {% trans %}Idioma{% endtrans %}
                                 </h2>
                                 <a href="{{ path('regne_hostil_club_change_language', {'lang' : 'cat' }) }}">
-                                        <img src="{{ asset('bundles/regnehostilclub/img/icon_cat.jpg') }}">
+                                    <img src="{{ asset('bundles/regnehostilclub/img/icon_cat.jpg') }}">
                                 </a>
+                                &nbsp &nbsp
                                 <a href="{{ path('regne_hostil_club_change_language', {'lang' : 'es' }) }}">
                                         <img src="{{ asset('bundles/regnehostilclub/img/icon_es.jpg') }}">
                                 </a>
@@ -61,7 +62,9 @@
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="#">Kingdoms</a>
+                                        <a href="{{ path('regne_hostil_kingdoms_homepage') }}">
+                                            Kingdoms
+                                        </a>
                                     </li>
                                     <li>
                                         <a href="#">Forum</a>

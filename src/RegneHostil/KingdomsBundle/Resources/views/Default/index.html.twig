@@ -12,12 +12,12 @@
 	<ul class="pager">
 		{% if newer == true %}
 			<li class="next">
-				<a href='{{ path('regne_hostil_club_homepage', {'page' : numpage - 1}) }}'>Newer &rarr;</a>
+				<a href='{{ path('regne_hostil_kingdoms_homepage', {'page' : numpage - 1}) }}'>Newer &rarr;</a>
 			</li>
 		{% endif %}
 		{% if older == true %}
 			<li class="previous">
-				<a href='{{ path('regne_hostil_club_homepage', {'page' : numpage + 1}) }}'>&larr; Older</a>
+				<a href='{{ path('regne_hostil_kingdoms_homepage', {'page' : numpage + 1}) }}'>&larr; Older</a>
 			</li>
 		{% endif %}
 	</ul>

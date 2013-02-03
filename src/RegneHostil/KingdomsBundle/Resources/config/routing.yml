@@ -1,3 +1,11 @@
 regne_hostil_kingdoms_homepage:
     pattern:  /kingdoms
     defaults: { _controller: RegneHostilKingdomsBundle:Default:index }
+
+regne_hostil_kingdoms_info:
+    pattern: /kingdoms/info
+    defaults: { _controller: RegneHostilKingdomsBundle:Default:info }
+
+regne_hostil_kingdoms_concurs_literari:
+    pattern: /kingdoms/concurs_literari
+    defaults: { _controller: RegneHostilKingdomsBundle:Default:concursLiterari }

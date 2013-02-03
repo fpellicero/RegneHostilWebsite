@@ -40,28 +40,28 @@
             <center>
               <img src="{{ asset('bundles/regnehostilkingdoms/img/logo-navbar.png') }}">
               <h2>Idioma</h2>        
-              <a href="/kingdoms/index/changeLanguage/cat">
+              <a href="{{ path('regne_hostil_club_change_language', { 'lang' : 'cat' }) }}">
                 <img src="{{ asset('bundles/regnehostilclub/img/icon_cat.jpg') }}">
               </a>
               &nbsp &nbsp
-              <a href="/kingdoms/index/changeLanguage/es">
+              <a href="{{ path('regne_hostil_club_change_language', { 'lang' : 'es' }) }}">
                 <img src="{{ asset('bundles/regnehostilclub/img/icon_es.jpg') }}">
               </a>
 
               <h2>Kingdoms</h2>
               <ul>
                 <li>
-                  <a href="/kingdoms/index/news">
+                  <a href="{{ path('regne_hostil_kingdoms_homepage') }}">
                     Portada
                   </a>
                 </li>
               <li>
-                  <a href="/kingdoms/inscripcions/info">
+                  <a href="#">
                       Inscripcions
                   </a>
                 </li>
                 <li>
-                  <a href="/forum">
+                  <a href="#">
                     Forum
                   </a>
                 </li>
@@ -72,31 +72,31 @@
               </h2>
               <ul>
                 <li>
-                  <a href="/kingdoms/about/generalInfo/">
+                  <a href="{{ path('regne_hostil_kingdoms_info') }}">
                       Informació de la partida
                   </a>
                 </li>
                 
                 <li>
-                  <a href="/kingdoms/about/concursLiterari/">
+                  <a href="{{ path ('regne_hostil_kingdoms_concurs_literari') }}">
                       Concurs Literari
                   </a>
                 </li>
                 
                 <li>
-                  <a href="/kingdoms/chronicles/archive/">
+                  <a href="#">
                       Cròniques del Regne
                   </a>
                 </li>
                 
                 <li>
-                  <a href="/kingdoms/about/camps/">
+                  <a href="#">
                       Campaments
                   </a>
                 </li>
                 
                 <li>
-                  <a href="/kingdoms/about/rules/">
+                  <a href="#">
                       Reglament
                   </a>
                 </li>
@@ -109,7 +109,7 @@
         <!-- Contingut escriptori -->
         <div class="span6 visible-desktop">
           <center>
-            <a href="http:\\www.kingdoms.regnehostil.com">
+            <a href="{{ path('regne_hostil_kingdoms_homepage') }}">
               <img src="{{ asset('bundles/regnehostilkingdoms/img/site_logo.png') }}">
             </a>
             {% block content %}{% endblock %}

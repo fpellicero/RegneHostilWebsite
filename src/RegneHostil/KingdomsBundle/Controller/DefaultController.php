@@ -54,4 +54,14 @@ class DefaultController extends Controller
 
         return $this->render('RegneHostilKingdomsBundle:Default:index.html.twig');
     }
+
+    public function infoAction()
+    {
+    	return $this->render('RegneHostilKingdomsBundle:Default:info.html.twig');
+    }
+
+    public function concursLiterariAction()
+    {
+    	return $this->render('RegneHostilKingdomsBundle:Default:concurs_literari.html.twig');
+    }
 }
