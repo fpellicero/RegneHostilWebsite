@@ -3,7 +3,9 @@
 {% block content %}
 	{% for noticia in noticies %}
 		<div class="entry">
-			<h1>{{ noticia.title }}</h1>
+			<a href="{{ path('regne_hostil_club_show_noticia', {'id' : noticia.id }) }}">
+				<h1>{{ noticia.title }}</h1>
+			</a>
 			<div class="date">{{ noticia.date|date("d/m/Y") }}</div>
 				<div class="entry_text">{{ noticia.text|raw }}</div>
 		</div>

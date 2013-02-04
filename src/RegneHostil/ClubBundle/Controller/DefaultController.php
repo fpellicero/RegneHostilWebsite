@@ -229,6 +229,19 @@ class DefaultController extends Controller
 			$this->arrayParams
 			);
 	}
+
+	public function showNoticiaAction($id)
+	{
+		$em = $this->getDoctrine()->getManager();
+		$noticia = $em->getRepository('RegneHostilClubBundle:Noticia')->find($id);
+
+		$this->arrayParams['noticia'] = $noticia;
+
+		return $this->render(
+			'RegneHostilClubBundle:Default:show_noticia.html.twig',
+			$this->arrayParams
+			);
+	}
 	
 }
 

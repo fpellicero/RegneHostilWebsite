@@ -2,6 +2,10 @@ regne_hostil_club_homepage:
     pattern:  /
     defaults: { _controller: RegneHostilClubBundle:Default:index }
 
+regne_hostil_club_show_noticia:
+    pattern: /noticia/{id}
+    defaults: { _controller: RegneHostilClubBundle:Default:showNoticia}
+
 regne_hostil_club_change_language:
     pattern: /lang/{lang}
     defaults: { _controller: RegneHostilClubBundle:Default:changeLanguage}

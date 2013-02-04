@@ -1,0 +1,9 @@
+{% extends 'RegneHostilClubBundle:Default:layout.html.twig' %}
+
+{% block content %}
+	<div class="entry">
+		<h1>{{ noticia.title }}</h1>
+		<div class="date">{{ noticia.date|date("d/m/Y") }}</div>
+		<div class="entry_text">{{ noticia.text|raw }}</div>
+	</div>
+{% endblock %}
