@@ -18,7 +18,7 @@ class QuoteController extends Controller
 			->findAll();
 		
 		return $this->render(
-			'RegneHostilClubBundle:Admin:list_quotes.html.twig',
+			'RegneHostilAdminBundle:Quote:list_quotes.html.twig',
 			array(
 				'quotes' => $quotes
 				)
@@ -41,7 +41,7 @@ class QuoteController extends Controller
 				$em->flush();
 
 				return $this->render(
-					'RegneHostilClubBundle:Admin:edit_noticia.html.twig',
+					'RegneHostilAdminBundle:Quote:edit_quote.html.twig',
 					array(
 						'form' => $form->createView(),
 						'updated' => true,
@@ -52,7 +52,7 @@ class QuoteController extends Controller
 		}
 		
 		return $this->render(
-			'RegneHostilClubBundle:Admin:edit_quote.html.twig',
+			'RegneHostilAdminBundle:Quote:edit_quote.html.twig',
 			array(
 					'form' => $form->createView(),
 					'updated' => false,
@@ -69,7 +69,7 @@ class QuoteController extends Controller
     	$em->remove($quote);
     	$em->flush();
 
-    	return new RedirectResponse($this->generateUrl('regne_hostil_club_admin_quotes'));	
+    	return new RedirectResponse($this->generateUrl('regne_hostil_admin_quotes'));	
 	}
 
 	public function createQuoteAction(Request $request)
@@ -89,11 +89,11 @@ class QuoteController extends Controller
 				$em->persist($quote);
 				$em->flush();
 
-				return new RedirectResponse($this->generateUrl('regne_hostil_club_admin_quotes')); 
+				return new RedirectResponse($this->generateUrl('regne_hostil_admin_quotes')); 
 			}
 		}
 		return $this->render(
-			'RegneHostilClubBundle:Admin:create_quote.html.twig',
+			'RegneHostilAdminBundle:Quote:create_quote.html.twig',
 			array(
 					'form' => $form->createView(),
 					'created' => false

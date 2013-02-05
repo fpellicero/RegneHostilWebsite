@@ -1,0 +1,24 @@
+{% extends 'RegneHostilAdminBundle::layout.html.twig' %}
+
+{% block content %}
+	<table class='table table-hover table-striped'>
+		<thead>
+			<tr>
+				<th>Id</th>
+				<th>Quote</th>
+				<th>Valid</th>
+			</tr>
+		</thead>
+		<tbody>
+		{% for quote in quotes %}
+			<tr>
+				<td>{{ quote.id }}</td>
+				<td>{{ quote.quote }}</td>
+				<td>{{ quote.valid }}</td>
+				<td><a href="{{ path('regne_hostil_admin_edit_quote', {'id' : quote.id }) }}">Edit</td>
+				<td><a href="{{ path('regne_hostil_admin_delete_quote', {'id' : quote.id }) }}">Delete</td>
+			</tr>
+		{% endfor %}
+		</tbody>
+	</table>
+{% endblock %}
