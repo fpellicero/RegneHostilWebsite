@@ -1,0 +1,7 @@
+parameters:
+#    regne_hostil_admin.example.class: RegneHostil\AdminBundle\Example
+
+services:
+#    regne_hostil_admin.example:
+#        class: %regne_hostil_admin.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

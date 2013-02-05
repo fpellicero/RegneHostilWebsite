@@ -2,6 +2,10 @@ regne_hostil_kingdoms_homepage:
     pattern:  /kingdoms
     defaults: { _controller: RegneHostilKingdomsBundle:Default:index }
 
+regne_hostil_kingdoms_camps:
+    pattern: /kingdoms/camps
+    defaults: { _controller: RegneHostilKingdomsBundle:Default:camps }
+
 regne_hostil_kingdoms_info:
     pattern: /kingdoms/info
     defaults: { _controller: RegneHostilKingdomsBundle:Default:info }

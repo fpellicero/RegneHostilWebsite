@@ -64,4 +64,9 @@ class DefaultController extends Controller
     {
     	return $this->render('RegneHostilKingdomsBundle:Default:concurs_literari.html.twig');
     }
+
+    public function campsAction()
+    {
+    	return $this->render('RegneHostilKingdomsBundle:Default:camps.html.twig');
+    }
 }

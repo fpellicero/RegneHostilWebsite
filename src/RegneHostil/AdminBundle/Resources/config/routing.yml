@@ -1,0 +1,35 @@
+regne_hostil_admin_homepage:
+    pattern: /admin
+    defaults: { _controller: RegneHostilAdminBundle:Default:index }
+
+regne_hostil_admin_create_noticia:
+    pattern: /admin/noticies/new
+    defaults: { _controller: RegneHostilAdminBundle:NoticiaClub:createNoticia }
+
+regne_hostil_admin_noticies:
+    pattern: /admin/noticies
+    defaults: { _controller: RegneHostilAdminBundle:NoticiaClub:llistarNoticies }
+
+regne_hostil_admin_edit_noticia:
+    pattern: /admin/noticia/{id}
+    defaults: { _controller: RegneHostilAdminBundle:NoticiaClub:editNoticia }
+
+regne_hostil_admin_delete_noticia:
+    pattern: /admin/noticia/{id}/delete
+    defaults: { _controller: RegneHostilAdminBundle:NoticiaClub:deleteNoticia }
+
+regne_hostil_admin_quotes:
+    pattern: /admin/quotes
+    defaults: { _controller: RegneHostilAdminBundle:Quote:listQuotes }
+
+regne_hostil_admin_create_quote:
+    pattern: /admin/quotes/new
+    defaults: { _controller: RegneHostilAdminBundle:Quote:createQuote }
+
+regne_hostil_admin_edit_quote:
+    pattern: /admin/quote/{id}
+    defaults: { _controller: RegneHostilAdminBundle:Quote:editQuote }
+
+regne_hostil_admin_delete_quote:
+    pattern: /admin/quote/{id}/delete
+    defaults: { _controller: RegneHostilAdminBundle:Quote:deleteQuote }

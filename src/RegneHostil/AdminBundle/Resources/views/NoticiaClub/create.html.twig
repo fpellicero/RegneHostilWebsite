@@ -1,0 +1,10 @@
+{% extends 'RegneHostilAdminBundle::layout.html.twig' %}
+
+{% block content %}
+<h2>Nova notícia</h2>
+<form action="{{ path('regne_hostil_admin_create_noticia') }}" method="post" {{ form_enctype(form) }}>
+    {{ form_widget(form) }}
+
+    <input type="submit" />
+</form>
+{% endblock %}

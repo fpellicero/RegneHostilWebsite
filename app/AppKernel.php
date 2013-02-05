@@ -21,6 +21,7 @@ class AppKernel extends Kernel
             new JMS\SecurityExtraBundle\JMSSecurityExtraBundle(),
             new RegneHostil\ClubBundle\RegneHostilClubBundle(),
             new RegneHostil\KingdomsBundle\RegneHostilKingdomsBundle(),
+            new RegneHostil\AdminBundle\RegneHostilAdminBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
