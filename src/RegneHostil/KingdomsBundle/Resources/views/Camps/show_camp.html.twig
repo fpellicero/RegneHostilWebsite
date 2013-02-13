@@ -3,16 +3,18 @@
 {% block content %}
 <div class="entry">
 	<h1>{{ camp.name }}</h1>
-	<a rel="lightbox" title="{{ camp.name }}" href="{{ asset( camp.logo ) }}">
-		<img class="camp-logo" src="{{ asset( camp.logo ) }}">
-	</a>
+	<img class="camp-logo" src="{{ asset( camp.logo ) }}">
 	<div class="entry_text">
 		{{ camp.desc }}
 	</div>
 </div>
 
 <div class="entry">
-	<h1>Reliquia</h1>
+	<br>
+	<h1>{{ camp.relicName }}</h1> 
+	<div class="entry_text">
+		{{ camp.relicDesc }}
+	</div>
 </div>
 
 {% endblock %}
