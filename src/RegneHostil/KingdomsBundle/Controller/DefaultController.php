@@ -5,10 +5,18 @@ namespace RegneHostil\KingdomsBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use RegneHostil\KingdomsBundle\Entity\Noticia;
 
-
-
 class DefaultController extends Controller
 {
+	public function preExecute()
+	{
+		if($this->get('session')->get('_locale') == NULL) {
+			$this->get('session')->set('_locale', 'cat');
+		}
+		$this->get('request')->setLocale($this->get('session')->get('_locale'));;
+		$this->arrayParams['lang'] = $this->get('session')->get('_locale');
+	}
+
+
     public function indexAction()
     {
     	// We set the offset based on the page parameter
@@ -23,7 +31,7 @@ class DefaultController extends Controller
 			->getRepository('RegneHostilKingdomsBundle:Noticia');
 		$query = $repository->createQueryBuilder('n')
 			->where('n.lang = :lang')
-			->setParameter('lang', 'cat')
+			->setParameter('lang', $this->get('session')->get('_locale'))
 			->setFirstResult( $offset )
 			->setMaxResults ( 5 )
 			->orderBy('n.date', 'DESC')

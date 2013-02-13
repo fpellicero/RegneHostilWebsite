@@ -36,8 +36,6 @@ class DefaultController extends Controller
 		$this->get('request')->setLocale($session->get('_locale'));;
 		$this->arrayParams['lang'] = $session->get('_locale');
 		$this->arrayParams['quote'] = $this->getRandomQuote();
-
-
 	}
 
 	public function changeLanguageAction($lang)

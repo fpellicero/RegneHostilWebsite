@@ -209,6 +209,7 @@ textarea {
 
 .img-camps {
 	-webkit-filter: grayscale(100%);
+	max-height: 280px;
 }
 
 .img-camps:hover {

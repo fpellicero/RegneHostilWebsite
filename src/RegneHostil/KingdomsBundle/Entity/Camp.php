@@ -21,6 +21,13 @@ class Camp
      */
     private $id;
 
+     /**
+     * @var string
+     *
+     * @ORM\Column(name="lang", type="string", length=10)
+     */
+     private $lang;
+    
     /**
      * @var string
      *
@@ -208,5 +215,28 @@ class Camp
     public function getMotto()
     {
         return $this->motto;
+    }
+
+    /**
+     * Set lang
+     *
+     * @param string $lang
+     * @return Camp
+     */
+    public function setLang($lang)
+    {
+        $this->lang = $lang;
+    
+        return $this;
+    }
+
+    /**
+     * Get lang
+     *
+     * @return string 
+     */
+    public function getLang()
+    {
+        return $this->lang;
     }
 }

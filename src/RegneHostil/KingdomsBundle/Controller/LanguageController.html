@@ -1,0 +1,27 @@
+<?php
+
+namespace RegneHostil\KingdomsBundle\Controller;
+
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use RegneHostil\KingdomsBundle\Entity\Noticia;
+
+
+
+class LanguageController extends Controller
+{
+
+	public function changeLanguageAction($lang)
+	{
+		$this->get('session')->set('_locale', $lang);
+		return new RedirectResponse($_SERVER['HTTP_REFERER']);
+	}
+
+	public function setRequestLanguage()
+	{
+		if($this->get('session')->get('_locale') == NULL) {
+			$this->get('session')->set('_locale', 'cat');
+		}
+		$this->get('request')->setLocale($this->get('session')->get('_locale'));;
+	}
+
+}

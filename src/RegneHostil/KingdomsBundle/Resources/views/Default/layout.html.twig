@@ -39,7 +39,7 @@
           <div class="left-bar">
             <center>
               <img src="{{ asset('bundles/regnehostilkingdoms/img/logo-navbar.png') }}">
-              <h2>Idioma</h2>        
+              <h2>{% trans %}Idioma{% endtrans %}</h2>        
               <a href="{{ path('regne_hostil_club_change_language', { 'lang' : 'cat' }) }}">
                 <img src="{{ asset('bundles/regnehostilclub/img/icon_cat.jpg') }}">
               </a>
@@ -52,17 +52,17 @@
               <ul>
                 <li>
                   <a href="{{ path('regne_hostil_kingdoms_homepage') }}">
-                    Portada
+                    {% trans %}Portada{% endtrans %}
                   </a>
                 </li>
               <li>
                   <a href="#">
-                      Inscripcions
+                      {% trans %}Inscripcions{% endtrans %}
                   </a>
                 </li>
                 <li>
                   <a href="#">
-                    Forum
+                    {% trans %}Forum{% endtrans %}
                   </a>
                 </li>
               </ul>
@@ -73,31 +73,31 @@
               <ul>
                 <li>
                   <a href="{{ path('regne_hostil_kingdoms_info') }}">
-                      Informació de la partida
+                      {% trans %}Informació de la partida{% endtrans %}
                   </a>
                 </li>
                 
                 <li>
                   <a href="{{ path ('regne_hostil_kingdoms_concurs_literari') }}">
-                      Concurs Literari
+                      {% trans %}Concurs Literari{% endtrans %}
                   </a>
                 </li>
                 
                 <li>
                   <a href="#">
-                      Cròniques del Regne
+                      {% trans %}Cròniques del Regne{% endtrans %}
                   </a>
                 </li>
                 
                 <li>
                   <a href="{{ path('regne_hostil_kingdoms_camps') }}">
-                      Campaments
+                      {% trans %}Campaments{% endtrans %}
                   </a>
                 </li>
                 
                 <li>
                   <a href="#">
-                      Reglament
+                      {% trans %}Reglament{% endtrans %}
                   </a>
                 </li>
               </ul>

@@ -1,6 +1,7 @@
 {% extends 'RegneHostilKingdomsBundle:Default:layout.html.twig' %}
 
 {% block content %}
+
 <div class="entry">
 	<h1>{{ camp.name }}</h1>
 	<center class="camp_motto">
@@ -20,6 +21,17 @@
 	<div class="entry_text">
 		{{ camp.relicDesc }}
 	</div>
+</div>
+
+<br>
+<div class="row">
+	{% for c in camps %}
+		<div class="span3">
+			<a href="{{ path('regne_hostil_kingdoms_show_camp', {'name': c.name}) }}">
+				<img class='img-camps' src="{{ asset( c.logo ) }}">
+			</a>	
+		</div>
+	{% endfor %}
 </div>
 
 {% endblock %}

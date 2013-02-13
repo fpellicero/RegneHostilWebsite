@@ -2,7 +2,7 @@
 
 {% block content %}
 	<div class="entry">
-		<h1>Campaments</h1>
+		<h1>{% trans %}Campaments{% endtrans %}</h1>
 	</div>
 	<div class="row-fluid">
 		{% for camp in camps %}
@@ -10,7 +10,6 @@
 			<a href="{{ path('regne_hostil_kingdoms_show_camp', {'name': camp.name}) }}">
 				<img class='img-camps' src="{{ asset( camp.logo ) }}">
 			</a>
-			<br>
 		</div>
 
 		{% if loop.index % 2 == 0 %}
