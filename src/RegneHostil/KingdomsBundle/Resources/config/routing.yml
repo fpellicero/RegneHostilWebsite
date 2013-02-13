@@ -4,7 +4,11 @@ regne_hostil_kingdoms_homepage:
 
 regne_hostil_kingdoms_camps:
     pattern: /kingdoms/camps
-    defaults: { _controller: RegneHostilKingdomsBundle:Default:camps }
+    defaults: { _controller: RegneHostilKingdomsBundle:Camps:listCamps }
+
+regne_hostil_kingdoms_show_camp:
+    pattern: /kingdoms/camps/{name}
+    defaults: { _controller: RegneHostilKingdomsBundle:Camps:showCamp }
 
 regne_hostil_kingdoms_info:
     pattern: /kingdoms/info
