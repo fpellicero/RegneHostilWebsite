@@ -42,6 +42,11 @@ form input[type=submit] {
 	//margin: 0 50px;
 }
 
+.camp_motto {
+	font-family: 'Calligraffitti';
+	font-size: 2em;
+}
+
 .gallery-album {
 	height: 200px;
 	color: #FFFFFF;
@@ -199,6 +204,7 @@ textarea {
 .camp-logo {
 	width: 45%;
 	float: left;
+	margin-right: 15px;
 }
 
 .img-camps {

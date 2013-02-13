@@ -3,6 +3,11 @@
 {% block content %}
 <div class="entry">
 	<h1>{{ camp.name }}</h1>
+	<center class="camp_motto">
+		<br>
+		{{ camp.motto }}
+	</center>
+	<br><br>
 	<img class="camp-logo" src="{{ asset( camp.logo ) }}">
 	<div class="entry_text">
 		{{ camp.desc }}

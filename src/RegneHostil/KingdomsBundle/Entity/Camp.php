@@ -57,6 +57,12 @@ class Camp
     private $relic_desc;
 
     /**
+    * @var string
+    *
+    * @ORM\Column(name="motto", type="string", length=50)
+    */
+    private $motto;
+    /**
      * Get id
      *
      * @return integer 
@@ -179,5 +185,28 @@ class Camp
     public function getRelicDesc()
     {
         return $this->relic_desc;
+    }
+
+    /**
+     * Set motto
+     *
+     * @param string $motto
+     * @return Camp
+     */
+    public function setMotto($motto)
+    {
+        $this->motto = $motto;
+    
+        return $this;
+    }
+
+    /**
+     * Get motto
+     *
+     * @return string 
+     */
+    public function getMotto()
+    {
+        return $this->motto;
     }
 }
