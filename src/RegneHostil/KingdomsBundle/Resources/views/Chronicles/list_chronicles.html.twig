@@ -1,0 +1,18 @@
+{% extends 'RegneHostilKingdomsBundle:Default:layout.html.twig' %}
+
+{% block content %}
+	<div class="entry">
+		<h1>{% trans %}Cròniques{% endtrans %}</h1>
+		<div class="entry_text">
+			<ul>
+				{% for chronicle in chronicles %}
+					<li>
+						<a href="{{ path('regne_hostil_kingdoms_show_chronicle', {'chapter' :  chronicle.chapter }) }}">
+							{{ chronicle.title }}
+						</a>
+					</li>
+				{% endfor %}
+			</ul>
+		</div>
+
+{% endblock %}

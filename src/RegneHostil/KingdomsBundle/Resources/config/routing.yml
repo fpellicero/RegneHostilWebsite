@@ -10,6 +10,14 @@ regne_hostil_kingdoms_show_camp:
     pattern: /kingdoms/camps/{name}
     defaults: { _controller: RegneHostilKingdomsBundle:Camps:showCamp }
 
+regne_hostil_kingdoms_chronicles:
+    pattern: /kingdoms/chronicles
+    defaults: { _controller: RegneHostilKingdomsBundle:Chronicles:listChronicles }
+
+regne_hostil_kingdoms_show_chronicle:
+    pattern: /kingdoms/chronicles/{chapter}
+    defaults: { _controller: RegneHostilKingdomsBundle:Chronicles:showChronicle }
+
 regne_hostil_kingdoms_info:
     pattern: /kingdoms/info
     defaults: { _controller: RegneHostilKingdomsBundle:Default:info }

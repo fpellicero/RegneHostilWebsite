@@ -6,7 +6,8 @@ return array(
 	'Concurs Literari' => 'Concurso Literario',
 	'Cròniques del Regne' => 'Crónicas del Reino',
 	'Reglament' => 'Reglamento',
-	'Campaments' => 'Campamentos'
+	'Campaments' => 'Campamentos',
+	'Cròniques' => 'Crónicas'
 	);
 
 ?>
