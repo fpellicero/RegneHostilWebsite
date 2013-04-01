@@ -2,17 +2,6 @@
 
 {% block content %}
 <div class="entry">
-	{% for c in camps %}
-		<div class="span3">
-			<a href="{{ path('regne_hostil_kingdoms_show_camp', {'name': c.name}) }}">
-				<img class='img-camps' src="{{ asset( c.logo ) }}">
-			</a>	
-		</div>
-	{% endfor %}
-</div>
-<br>
-
-<div class="entry">
 	<h1>{{ camp.name }}</h1>
 	<center class="camp_motto">
 		<br>
@@ -33,4 +22,15 @@
 	</div>
 </div>
 
+<br><br>
+
+<div class="entry">
+	{% for c in camps %}
+		<div class="span3">
+			<a href="{{ path('regne_hostil_kingdoms_show_camp', {'name': c.name}) }}">
+				<img class='img-camps' src="{{ asset( c.logo ) }}">
+			</a>	
+		</div>
+	{% endfor %}
+</div>
 {% endblock %}
