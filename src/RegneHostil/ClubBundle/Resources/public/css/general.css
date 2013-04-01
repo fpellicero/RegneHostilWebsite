@@ -1,6 +1,6 @@
 @font-face {
-font-family: "Dumb";
-src: url('/bundles/regnehostilclub/fonts/dum1.ttf');
+	font-family: "Dumb";
+	src: url('/bundles/regnehostilclub/fonts/dum1.ttf');
 }
 
 body{
@@ -140,18 +140,18 @@ textarea {
 /* Clase per a fer els iframe de youtube/vimeo responsive */
 .embed {
 	position: relative;
-    padding-bottom: 56.25%; /* 16/9 ratio */
-    height: 0;
-    overflow: hidden;
+	padding-bottom: 56.25%; /* 16/9 ratio */
+	height: 0;
+	overflow: hidden;
 }
 .embed iframe,
 .embed object,
 .embed embed {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
 }
 
 /* Hack per fer els plugins de facebook responsive */
@@ -208,10 +208,12 @@ textarea {
 }
 
 .img-camps {
+	filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale"); /* Firefox 3.5+ */
 	-webkit-filter: grayscale(100%);
 	max-height: 280px;
 }
 
 .img-camps:hover {
+	filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'1 0 0 0 0, 0 1 0 0 0, 0 0 1 0 0, 0 0 0 1 0\'/></filter></svg>#grayscale");
 	-webkit-filter: grayscale(0%);
 }
