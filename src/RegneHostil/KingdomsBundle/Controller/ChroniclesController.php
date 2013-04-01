@@ -19,14 +19,27 @@ class ChroniclesController extends Controller
 
 	public function listChroniclesAction()
 	{
-		$chronicles = $this->getDoctrine()
-			->getRepository('RegneHostilKingdomsBundle:Chronicle')
-			->findByLang($this->get('session')->get('_locale'));
+		$repository = $this->getDoctrine()->getRepository('RegneHostilKingdomsBundle:Chronicle');
+
+		$chronicles2011 = $repository->findBy(
+			array(
+				'lang' => $this->get('session')->get('_locale'),
+				'year' => '2011'
+				)
+			);
+
+		$chronicles2012 = $repository->findBy(
+			array(
+				'lang' => $this->get('session')->get('_locale'),
+				'year' => '2011'
+				)
+			);
 
 		return $this->render(
 			'RegneHostilKingdomsBundle:Chronicles:list_chronicles.html.twig',
 			array(
-				'chronicles' => $chronicles
+				'chronicles2011' => $chronicles2011,
+				'chronicles2012' => $chronicles2012
 				)
 			);
 	}
@@ -34,8 +47,8 @@ class ChroniclesController extends Controller
 	public function showChronicleAction($chapter)
 	{
 		$chronicle = $this->getDoctrine()
-			->getRepository('RegneHostilKingdomsBundle:Chronicle')
-			->findOneBy(array('chapter' => $chapter, 'lang' => $this->get('session')->get('_locale') ));
+		->getRepository('RegneHostilKingdomsBundle:Chronicle')
+		->findOneBy(array('chapter' => $chapter, 'lang' => $this->get('session')->get('_locale') ));
 
 		return $this->render(
 			'RegneHostilKingdomsBundle:Chronicles:show_chronicle.html.twig',

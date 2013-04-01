@@ -4,8 +4,20 @@
 	<div class="entry">
 		<h1>{% trans %}Cròniques{% endtrans %}</h1>
 		<div class="entry_text">
+			<h2>Kingdoms 2011</h2>
 			<ul>
-				{% for chronicle in chronicles %}
+				{% for chronicle in chronicles2011 %}
+					<li>
+						<a href="{{ path('regne_hostil_kingdoms_show_chronicle', {'chapter' :  chronicle.chapter }) }}">
+							{{ chronicle.title }}
+						</a>
+					</li>
+				{% endfor %}
+			</ul>
+
+			<h2>Kingdoms 2012</h2>
+			<ul>
+				{% for chronicle in chronicles2012 %}
 					<li>
 						<a href="{{ path('regne_hostil_kingdoms_show_chronicle', {'chapter' :  chronicle.chapter }) }}">
 							{{ chronicle.title }}
