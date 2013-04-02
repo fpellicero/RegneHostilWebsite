@@ -126,7 +126,7 @@ textarea {
 
 .entry h2 {
 	font-family: 'Dumb';
-	color:#000000;
+	color: white;
 }
 
 .date {
@@ -228,13 +228,13 @@ textarea {
 }
 
 .entry a {
-	color: #8DCA3F;	
+	color: rgb(230, 230, 0);	
 	font-size: 1.1em;
 	line-height: 1.5em;
 	text-decoration: none;
 }
 
 .entry a:hover {
-	color: rgb(228, 210, 7);
+	color: rgb(231, 139, 0);
 	text-decoration: underline;
 }

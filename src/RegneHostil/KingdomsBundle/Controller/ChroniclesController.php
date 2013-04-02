@@ -31,7 +31,7 @@ class ChroniclesController extends Controller
 		$chronicles2012 = $repository->findBy(
 			array(
 				'lang' => $this->get('session')->get('_locale'),
-				'year' => '2011'
+				'year' => '2012'
 				)
 			);
 
