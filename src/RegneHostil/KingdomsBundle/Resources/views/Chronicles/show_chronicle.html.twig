@@ -8,4 +8,16 @@
 		</div>
 	</div>
 
+<ul class="pager">
+	{% if next == true %}
+		<li class="next">
+			<a href='{{ path('regne_hostil_kingdoms_show_chronicle', {'chapter' : chapter + 1}) }}'>Newer &rarr;</a>
+		</li>
+	{% endif %}
+	{% if prev == true %}
+		<li class="previous">
+			<a href='{{ path('regne_hostil_kingdoms_show_chronicle', {'chapter' : chapter - 1}) }}'>&larr; Older</a>
+		</li>
+	{% endif %}
+</ul>
 {% endblock %}

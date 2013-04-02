@@ -46,13 +46,28 @@ class ChroniclesController extends Controller
 
 	public function showChronicleAction($chapter)
 	{
-		$chronicle = $this->getDoctrine()
-		->getRepository('RegneHostilKingdomsBundle:Chronicle')
-		->findOneBy(array('chapter' => $chapter, 'lang' => $this->get('session')->get('_locale') ));
+		$repository = $this->getDoctrine()->getRepository('RegneHostilKingdomsBundle:Chronicle'); 
+		
+		$chronicle = $repository->findOneBy(array('chapter' => $chapter, 'lang' => $this->get('session')->get('_locale') ));
+
+		$next = false;
+		if ($repository->findOneBy(array('chapter' => $chapter + 1, 'lang' => $this->get('session')->get('_locale') ))) {
+			$next = true;
+		}
+
+		$prev = false;
+		if ($repository->findOneBy(array('chapter' => $chapter - 1, 'lang' => $this->get('session')->get('_locale') ))) {
+			$prev = true;
+		}
 
 		return $this->render(
 			'RegneHostilKingdomsBundle:Chronicles:show_chronicle.html.twig',
-			array('chronicle' => $chronicle)
+			array(
+				'chronicle' => $chronicle,
+				'chapter' => $chapter,
+				'next' => $next,
+				'prev' => $prev
+				)
 			);
 	}
 }
